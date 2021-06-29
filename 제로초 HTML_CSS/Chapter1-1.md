@@ -1,6 +1,5 @@
 
 ### HTML (HyperText Markup Language)
-
 - 하이퍼텍스트 마크업 언어로 웹 페이지를 위한 마크업 언어 😊
 
 ### CSS (Cascading Style Sheets)
