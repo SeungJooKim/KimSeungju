@@ -1,0 +1,6 @@
+/* css 파일! */
+/* css 는 casecading 특성을 지녔기 때문에 부모의 특성을 일단 가지고, 자식이 덮어쓰는! */
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
