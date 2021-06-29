@@ -1,0 +1,25 @@
+/* css 파일! */
+/* css 는 casecading 특성을 지녔기 때문에 부모의 특성을 일단 가지고, 자식이 덮어쓰는! */
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+
+#header-search {
+}
+
+/*div의 경우 자동 속성이 block이어서 한줄에 넣고 싶을 경우 이를 바꿔주어야 한다!*/
+#header-search > h1 {
+  /* #header-search h1 이렇게 써도 동일*/
+  width: 280px;
+  display: inline-block;
+}
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+}
