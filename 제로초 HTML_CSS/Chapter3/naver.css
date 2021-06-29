@@ -5,22 +5,39 @@
   width: 1080px;
 }
 
-#header-search {
+#header-search a {
+  text-decoration: none;
 }
 
 /*div의 경우 자동 속성이 block이어서 한줄에 넣고 싶을 경우 이를 바꿔주어야 한다!*/
-#header-search > h1 {
+#header-search h1 {
   /* #header-search h1 이렇게 써도 동일*/
-  width: 280px;
+  width: 198px;
+  height: 48px;
+  background-image: url(./sp_search.png);
+  background-position: -4px -12px;
   display: inline-block;
+  text-indent: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
 }
-
+#header-search > h1 span {
+  display: none;
+}
 #header-search h2 {
   display: none;
 }
 
 #header-search fieldset {
-  width: 520px;
+  width: 521px;
+  height: 49px;
+  margin-left: 20px;
+  /* padding-left: 12px;
+  padding-right:0px ;
+  padding-top: 12px;
+  padding-bottom: 12px; */
+  padding: 12px 0 12px 10px; /*시계방향 (위, 오른쪽, 아래, 왼쪽)*/
+  border: 2px solid #03cf5d;
   display: inline-block;
 }
 
