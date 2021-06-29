@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--html head 태그 알아보기-->
+
+<head>
+    <!-- head는 화면에는 보이지는 않아요!-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <!--favicon-->
+    <title> 네이버</title>
+    <!--닫는 태그 작성하는 습관 가지기!-->
+</head>
+
+<body>
+    <!--레이아웃과 div 태그!  (강의 2-1)-->
+    <!-- 화면을 먼저 가로로 나눈 뒤 , 세로로 나누면 layout 위치 잡기 좋아요!-->
+    <header> <!--시맨틱 태그 -->
+        <!--1번 가로 구역-->
+        <h1>
+            <a href="https://www.naver.com">네이버</a>
+            <!--속성(attribute)입니다.-->
+            <!--주석(Comment)입니다.-->
+        </h1>
+        <h2>검색창</h2>
+        <fieldset>
+
+            <legend>검색</legend>
+            <input />
+            <input type="button" value="검색" />
+
+        </fieldset>
+    </header>
+    <nav>
+        <ul>
+            <!--ol은 순서가 있는 목록-->
+            <li>메일</li>
+            <!--list item-->
+            <li>카페</li>
+            <li>블로그</li>
+            <li>지식인</li>
+            <li>쇼핑</li>
+
+        </ul>
+    </nav>
+    <main> <!--div 태그의 단점은 구분이 안된다는 점!-->
+        <h2>실시간 검색어</h2>
+        <h3>연합뉴스</h3>
+        <ol>
+            <li> 충격) 제로초 지금 목아파....</li>
+            <li> 속보 ) 제로초 공부중... </li>
+        </ol>
+
+        <h3>언론사 목록</h3>
+        <ul>
+
+            <li><img src="./중앙일보.png" alt="중앙일보" /></li>
+            <!-- alt는 시각장애인에게 도움 -->
+            <li><img src="./한국일보.png" alt="한국일보" /></li>
+
+        </ul>
+
+        <h3>로그인</h3>
+        <h3>뉴스</h3>
+        <h3>법률</h3>
+        <h3>쇼핑</h3>
+    </main>
+    <footer><!--footer 태그 -->
+        <div>공지사항</div>
+        <div>Creators</div>
+        <div>회사소개</div>
+    </footer>
+</body>
+
+</html>
