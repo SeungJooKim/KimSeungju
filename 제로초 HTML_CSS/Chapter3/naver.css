@@ -1,5 +1,10 @@
 /* css 파일! */
 /* css 는 casecading 특성을 지녔기 때문에 부모의 특성을 일단 가지고, 자식이 덮어쓰는! */
+
+* {
+  /*모든 컨텐트 라는 의미*/
+  box-sizing: border-box;
+}
 #header-center {
   margin: 0 auto;
   width: 1080px;
@@ -7,6 +12,7 @@
 
 #header-search a {
   text-decoration: none;
+  vertical-align: middle;
 }
 
 /*div의 경우 자동 속성이 block이어서 한줄에 넣고 싶을 경우 이를 바꿔주어야 한다!*/
@@ -20,6 +26,7 @@
   text-indent: 100%;
   overflow: hidden;
   background-repeat: no-repeat;
+  vertical-align: middle;
 }
 #header-search > h1 span {
   display: none;
@@ -39,6 +46,13 @@
   padding: 12px 0 12px 10px; /*시계방향 (위, 오른쪽, 아래, 왼쪽)*/
   border: 2px solid #03cf5d;
   display: inline-block;
+  box-sizing: border-box; /*padding이랑 border를 합한 크기를 width로 사용*/
+  vertical-align: middle;
+}
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
 }
 
 .blind {
