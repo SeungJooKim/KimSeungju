@@ -7,22 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="./naver.css" />
-    <!--css 파일 연결-->
     <title> 네이버</title>
 </head>
 
 <body>
-    <!--5-1. float과 블록 포맷 컨텍스트-->
+    <!--5-3.검색창 따라만들기 -->
     <header>
-
         <div class="center-align">
-            <div>
-                <span> 네이버를 시작 페이지로!</span>
-                <span> 쥬니어네이버</span>
-                <span> 해피빈</span>
-
-            </div>
-            <div id="header-search">
+            <div id="header-top">
+                <span>네이버를 시작페이지로 > | </span>
+                <span>쥬니어네이버 | </span>
+                <span>해피빈</span>
+              </div>
+            <div id="header-search" style="clear:both;"> <!--위에꺼가 float:right를 쓰는데 공간 침범 안하게 하기 위해 clear:both-->
                 <a href="https://www.naver.com">
                     <h1 id="header-logo">
                         <span>네이버</span>
@@ -42,7 +39,12 @@
         </div>
     </header>
     <nav>
-        <div class="center-align">
+        <div class="center-align relative">
+            <div id="search-ranking">
+                <h2 class="blind">실시간 검색어</h2>
+                <span id="rank-number">1</span>
+                <span id="rank-title">제로초</span>
+              </div>
             <ul>
                 <!--링크 걸기-->
                 <li><a href=""><span></span><span class="blind">메일</span></a></li>
@@ -52,6 +54,10 @@
                 <li><a href=""><span></span><span class="blind">쇼핑</span></a></li>
                 <li><a href=""><span></span><span class="blind">네이버페이</span></a></li>
                 <li><a href=""><span></span><span class="blind">네이버쇼핑</span></a></li>
+
+                <!-- 구분선 추가!-->
+                <div class="nav-divider"></div>
+
             </ul>
         </div>
     </nav>
