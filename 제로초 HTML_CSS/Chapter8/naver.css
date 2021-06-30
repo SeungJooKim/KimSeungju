@@ -559,6 +559,7 @@ main {
 
 #subject-list {
   width: 603px;
+  position: relative;
 }
 #subject-prev span:last-child {
   position: absolute;
@@ -596,8 +597,43 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
+  height: 45px;
+  overflow: hidden;
 }
 
 #subject-list li {
   float: left;
+  margin-right: 10px;
+  padding: 14px 7px 0;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: NanumSquare, Dotum, "돋움", Helvetica, AppleSDGothicNeo,
+    sans-serif;
+}
+
+#subject-list li.highlight {
+  border-bottom: 3px solid #00c73c;
+  color: #00b336;
+  height: 45px;
+  font-weight: 700;
+}
+.opacity {
+  opacity: 0.5;
+  background: white;
+}
+
+.opacity.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
+}
+.opactiy right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 45px;
+  width: 15px;
 }
