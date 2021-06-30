@@ -42,6 +42,8 @@ body {
   height: 680px;
   background: #1a181a;
   display: inline-block;
+  position: relative;
+  z-index: 1;
 }
 
 .background-text {
@@ -64,12 +66,14 @@ body {
 }
 
 .footer {
-  background-image: url(./footer.png);
-  background-size: 100% 220px;
-  background-position: -3px -60px;
-  background-repeat: no-repeat;
-  height: 220px;
+  /* background-image: url(./footer.png); */
+
+  /* background-repeat: no-repeat; */
+  height: 200px;
   width: 100%;
+  /* /* background-position: 70% 80%; */
+  position: relative;
+  z-index: 1;
 }
 
 .header-list a {
@@ -215,4 +219,11 @@ body {
 }
 #head-btn:focus {
   border: 2px solid white;
+}
+
+.footer img {
+  position: relative;
+  z-index: 0;
+  margin-top: -100px;
+  margin-left: 1080px;
 }
