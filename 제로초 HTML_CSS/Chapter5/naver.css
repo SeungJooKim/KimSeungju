@@ -10,10 +10,19 @@ body {
   /*이렇게 설정해주고 시작하는게 좋음*/
   margin: 0;
   padding: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
+  /*순서대로 적용됨!*/
+}
+
+header {
+  height: 160px;
 }
 .center-align {
   margin: 0 auto;
   width: 1080px;
+}
+.relative {
+  position: relative;
 }
 #fixed {
   /*항상 따라다니는 애*/
@@ -39,6 +48,8 @@ body {
 #header-top {
   /*id는 2단어 이상이 좋아요*/
   float: right;
+  margin-top: 11px;
+  height: 21px;
 }
 
 #header-top span {
@@ -61,8 +72,8 @@ body {
   background-repeat: no-repeat;
   vertical-align: middle;
   position: relative;
-  top: 4px;
-  right: -13px;
+  top: -5px;
+  left: 1px;
 }
 #header-search > h1 span {
   display: none;
@@ -71,10 +82,14 @@ body {
   display: none;
 }
 
+#header-search {
+  clear: both;
+  padding-top: 20px;
+}
 #header-search fieldset {
   width: 521px;
   height: 49px;
-  margin-left: 20px;
+  margin-left: 18px;
   /* padding-left: 12px;
   padding-right:0px ;
   padding-top: 12px;
@@ -115,7 +130,7 @@ body {
   background-image: url(./sp_search.png);
   background-position: -3px -60px;
   background-repeat: no-repeat;
-  margin: 14px;
+  margin: 10px;
   /* position: absolute;
   top: 50%;
   left: 50%;
@@ -130,10 +145,25 @@ body {
   height: 1px;
 }
 
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
+}
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
 nav ul {
+  float: left;
   margin: 0;
-  padding: 0;
+  padding: 3px 0 0 4px;
   list-style: none;
+  display: inline-block;
 }
 
 nav li {
@@ -178,4 +208,9 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
+}
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
 }
