@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./naver.css" />
+  <title> 네이버</title>
+</head>
+
+<body>
+
+  <!--6-1. 마진 상쇄!! (collapsing)-->
+  <!-- <div style="height:20px; margin-bottom: 20px; background: yellow;"></div> 
+  <div style="height:20px; margin-top: 20px; background: green;"></div>  -->
+  <!--상하 마진은 겹친다! (형제 태그 간의 마진 상쇄! 사이즈가 큰 애만 남는다.)-->
+
+  <div style="height:20px; margin-bottom: 20px; background: yellow;">
+    <div style="height:20px; margin-top: 20px; background: green;"></div>
+  </div>
+  <!--부모 자식간의 마진 상쇄 (부모의 영역을 자식이 침범해버린다! )-->
+  <!--hidden이나 overflow를 사용해볼 수는 있으나 완벽히 처리는 불가!-->
+  <!--마진 상쇄를 해결할 수 있는 방법은 display를 inline-block으로 하고 width를 100%로!!  -->
+
+  <header>
+    <div class="center-align">
+      <div id="header-top">
+        <span>네이버를 시작페이지로 > | </span>
+        <span>쥬니어네이버 | </span>
+        <span>해피빈</span>
+      </div>
+      <div id="header-search">
+        <a href="https://www.naver.com">
+          <h1>
+            <span>네이버</span>
+          </h1>
+        </a>
+        <h2 class="blind">검색창</h2>
+        <fieldset>
+          <legend class="blind">검색</legend>
+          <input />
+          <span id="search-keyboard"></span>
+          <span id="search-history"></span>
+          <button>
+            <span class="blind">검색</span>
+            <span id="search-image"></span>
+          </button>
+        </fieldset>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="center-align relative">
+      <div id="search-ranking">
+        <h2 class="blind">실시간 검색어</h2>
+        <span id="rank-number">1</span>
+        <span id="rank-title">제로초</span>
+      </div>
+      <ul>
+        <li>
+          <a href="">
+            <span class="nav-item-mail"></span>
+            <span class="blind">메일</span>
+          </a>
+        </li> <!-- list item -->
+        <li><a href=""><span></span><span class="blind">카페</span></a></li>
+        <li><a href=""><span></span><span class="blind">블로그</span></a></li>
+        <li><a href=""><span></span><span class="blind">지식인</span></a></li>
+        <li><a href=""><span></span><span class="blind">네이버쇼핑</span></a></li>
+        <li><a href=""><span></span><span class="blind">네이버페이</span></a></li>
+        <li><a href=""><span></span><span class="blind">네이버TV</span></a></li>
+        <li><a href=""><span></span><span class="blind">사전</span></a></li>
+        <li><a href=""><span></span><span class="blind">뉴스</span></a></li>
+        <li><a href=""><span></span><span class="blind">증권</span></a></li>
+        <li><a href=""><span></span><span class="blind">부동산</span></a></li>
+        <li><a href=""><span></span><span class="blind">지도</span></a></li>
+        <li><a href=""><span></span><span class="blind">영화</span></a></li>
+        <li><a href=""><span></span><span class="blind">뮤직</span></a></li>
+        <li><a href=""><span></span><span class="blind">책</span></a></li>
+        <li><a href=""><span></span><span class="blind">웹툰</span></a></li>
+      </ul>
+      <div class="nav-divider"></div>
+      <ul>
+        <li class="more"><a href=""><span></span><span class="blind">더보기</span></a></li> <!-- list item -->
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="center-align">
+      <h3>연합뉴스</h3>
+      <ol>
+        <li>충격) 피로그래밍!! 본격 시작!!</li>
+        <li>속보) 피로그래밍 1차 과제 중...ㅎ</li>
+        <li>속보) 피로그래밍 15기!! 파이팅!!</li>
+      </ol>
+      <h3> 언론사</h3>
+      <ul>
+        <li><img src="./중앙일보.png" alt="중앙일보" /></li>
+        <li><img src="./한국일보.png" alt="한국일보" /></li>
+        <li><img src="./osen.png" alt="osen" /></li>
+        <li><img src="./매일경제.png" alt="매일경제" /></li>
+        <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+        <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+        <li><img src="./중앙일보.png" alt="중앙일보" /></li>
+        <li><img src="./한국일보.png" alt="한국일보" /></li>
+        <li><img src="./osen.png" alt="osen" /></li>
+        <li><img src="./매일경제.png" alt="매일경제" /></li>
+        <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+        <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+        <li><img src="./중앙일보.png" alt="중앙일보" /></li>
+        <li><img src="./한국일보.png" alt="한국일보" /></li>
+        <li><img src="./osen.png" alt="osen" /></li>
+        <li><img src="./매일경제.png" alt="매일경제" /></li>
+        <li><img src="./파이낸셜뉴스.png" alt="파이낸셜뉴스" /></li>
+        <li><img src="./한국경제TV.png" alt="한국경제TV" /></li>
+      </ul>
+      <h3>로그인</h3>
+      <h3>뉴스</h3>
+      <h3>법률</h3>
+      <h3>쇼핑</h3>
+      <h6>쇼핑</h6>
+    </div>
+  </main>
+  <footer>
+    <div>공지사항</div>
+    <div>Creators</div>
+    <div>회사소개</div>
+  </footer>
+</body>
+
+</html>
