@@ -60,7 +60,7 @@ header {
 
 #header-search {
   clear: both;
-  padding-top: 12px;
+  padding-top: 45px;
 }
 
 #header-search a {
@@ -294,9 +294,12 @@ nav li.more:first-child span:first-child {
   height: 14px;
   background: #ebeef3;
 }
+#main-first-block {
+  display: inline-block;
+  width: 100%;
+}
 
 #main-ad {
-  display: inline-block;
   width: 740px;
   height: 120px;
   background: #555;
@@ -305,7 +308,6 @@ nav li.more:first-child span:first-child {
   float: left;
 }
 #main-login {
-  display: inline-block;
   width: 332px;
   height: 120px;
   vertical-align: top;
@@ -346,29 +348,92 @@ nav li.more:first-child span:first-child {
   margin-bottom: 8px;
 }
 #main-category {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 837px;
   background-color: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 #main-shopping {
-  display: inline-block;
-  width: 332px;
+  float: left;
+  width: 324px;
   height: 837px;
   background-color: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-event {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 130px;
   background-color: white;
   vertical-align: top;
+  margin-right: 8px;
 }
 
 #main-third-ad {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 130px;
   background-color: #555;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 332px;
+  vertical-align: top;
+}
+
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
+}
+
+#main-newsstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #555;
+}
+
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#main-newsstand li {
+  float: left;
+  width: 123px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
+#main-newsstand li img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
+}
+#main-third-block {
+  display: inline-block;
+  width: 100%;
 }
