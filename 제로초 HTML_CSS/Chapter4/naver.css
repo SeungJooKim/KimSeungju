@@ -1,0 +1,116 @@
+/* css 파일! */
+/* css 는 casecading 특성을 지녔기 때문에 부모의 특성을 일단 가지고, 자식이 덮어쓰는! */
+
+* {
+  /*모든 컨텐트 라는 의미*/
+  box-sizing: border-box;
+}
+html,
+body {
+  /*이렇게 설정해주고 시작하는게 좋음*/
+
+  margin: 0;
+  padding: 0;
+}
+#fixed {
+  /*항상 따라다니는 애*/
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+
+#header-search a {
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+/*div의 경우 자동 속성이 block이어서 한줄에 넣고 싶을 경우 이를 바꿔주어야 한다!*/
+#header-search h1 {
+  /* #header-search h1 이렇게 써도 동일*/
+  width: 198px;
+  height: 48px;
+  background-image: url(./sp_search.png);
+  background-position: -4px -12px;
+  display: inline-block;
+  text-indent: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  position: relative;
+  top: 4px;
+  right: -13px;
+}
+#header-search > h1 span {
+  display: none;
+}
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 521px;
+  height: 49px;
+  margin-left: 20px;
+  /* padding-left: 12px;
+  padding-right:0px ;
+  padding-top: 12px;
+  padding-bottom: 12px; */
+  padding: 12px 0 12px 10px; /*시계방향 (위, 오른쪽, 아래, 왼쪽)*/
+  border: 2px solid #03cf5d;
+  display: inline-block;
+  box-sizing: border-box; /*padding이랑 border를 합한 크기를 width로 사용*/
+  vertical-align: middle;
+  position: relative;
+}
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: top;
+  width: 405px;
+  height: 23px;
+}
+
+#header-search fieldset button {
+  /*position을 써서 버튼 위치 옮기기*/
+  width: 49px;
+  height: 49px;
+  border: none;
+  background: #03cf5d;
+  padding: 0;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+}
+
+#search-image {
+  /*검색 버튼*/
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  margin: 14px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); */
+}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
