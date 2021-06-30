@@ -55,6 +55,24 @@
   outline: none;
 }
 
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  background: #03cf5d;
+  padding: 0;
+}
+
+#search-image {
+  /*검색 버튼*/
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  background-image: url(./sp_search.png);
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  margin: 14px;
+}
 .blind {
   position: absolute;
   overflow: hidden;
