@@ -50,3 +50,9 @@ if not None:
 
 if not '':
     print('참')  # not 빈 문자열은 참
+
+
+x = 15
+
+if x > 0 and x < 20:
+    print('20보다는 작은 양수')
