@@ -18,3 +18,11 @@
 + [Git_Clone](https://github.com/piro15/KimSeungju/tree/master/Git_Clone)  
 
   + 깃허브 페이지 클론코딩🧡
+
++ [Python](https://github.com/piro15/KimSeungju/tree/master/Python) 
+   + 파이썬 코딩 도장😊
+
++ [Bootstrap](https://github.com/piro15/KimSeungju/tree/master/Bootstrap) 
+   + Bootstrap 클론코딩💗
+  
+
