@@ -25,6 +25,7 @@ while(True):
         num = num+1
         print('PlayerA : ', num)
         if num == 31:
+            print('PlayerB win!')
             exit()
 
     while True:
@@ -45,4 +46,5 @@ while(True):
         num = num+1
         print('PlayerB : ', num)
         if num == 31:
+            print('PlayerA win!')
             exit()
