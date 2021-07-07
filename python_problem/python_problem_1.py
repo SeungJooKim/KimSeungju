@@ -19,3 +19,7 @@ while(True):
 
     except ValueError:
         print('정수를 입력하세요')
+
+for i in range(player_num):
+    num = i+1
+    print('PlayerA : ', num)
