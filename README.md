@@ -22,6 +22,9 @@
 + [Python](https://github.com/piro15/KimSeungju/tree/master/Python) 
    + 파이썬 코딩 도장😊
 
++ [Python_problem](https://github.com/piro15/KimSeungju/tree/master/python_problem) 
+   + 파이썬 개별 과제🙄
+
 + [Bootstrap](https://github.com/piro15/KimSeungju/tree/master/Bootstrap) 
    + Bootstrap 클론코딩💗
   
