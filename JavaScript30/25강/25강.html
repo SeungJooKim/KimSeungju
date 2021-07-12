@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after { 
+    box-sizing: inherit; 
+  }
+
+  div {
+    width: 100%;
+    padding: 100px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
+
+<button>버튼</button>
+<script>
+
+  const divs=document.querySelectorAll('div');
+  const button = document.querySelector('button');
+  function logText(e){
+    console.log(this.classList.value);
+    //e.stopPropagation(); //stop bubbling 
+    //( capture true로 해놓고 하면 맨 위꺼 하나만 찍힘. false일때는 선택한 것만)
+
+  }
+ // document.body.addEventListener('click',logText); //ripple down -> bubble ( start from down and go up)
+
+  divs.forEach(div=> div.addEventListener('click',logText,{
+    //capture:true //위에서 아래로?
+    capture:false,
+    once:true //한번만
+  })); //wrap -> 3번째꺼 클릭해도 1,2,3 다나옴
+
+  button.addEventListener('click',()=>{
+    console.log('Click');
+  },{
+    once: true
+  })
+</script>
+</body>
+</html>
