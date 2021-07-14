@@ -16,6 +16,9 @@
 <body>
 
     <div class="page-header">
+        {% if user.is_authenticated %} <!--관리자로 로그인한 유저들만 링크가 보임-->
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
         <h1><a href="">SeungJoo's Blog</a></h1>
     </div>
 
@@ -23,13 +26,6 @@
         <div class="row">
             <div class="col-md-8">
                 {% block content %}
-                    {% for post in posts %}
-                        <div class="post">
-                            <p>published: {{ post.published_date }}</p>
-                            <h1><a href="">{{ post.title }}</a></h1>
-                            <p>{{ post.text|linebreaksbr }}</p>
-                        </div>
-                    {% endfor %}
                 {% endblock %}
             </div>
         </div>
