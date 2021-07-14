@@ -12,6 +12,15 @@
         <h1><a href ="">SeungJoo's Blog</a></h1>
     </div>
 
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+
+    <!--
     <div>
         <p>published : 14.07.2021, 19:39</p>
         <h2><a href="">My first Post</a></h2>
@@ -24,6 +33,6 @@
         <p>published : 14.07.2021, 19:40</p>
         <h2><a href="">My Second Post</a></h2>
         <p>나의 두번째 게시글 입니다!! 😀</p>
-    </div>
+    </div> -->
 </body>
 </html>
