@@ -1,38 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <title>SJ's Blog</title>
 </head>
+
 <body>
 
-    <div>
-        <h1><a href ="">SeungJoo's Blog</a></h1>
+    <div class="page-header">
+        <h1><a href="">SeungJoo's Blog</a></h1>
     </div>
 
-    {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                <div class="post">
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
-    {% endfor %}
-
-    <!--
-    <div>
-        <p>published : 14.07.2021, 19:39</p>
-        <h2><a href="">My first Post</a></h2>
-        <p>나의 첫 게시글 입니다!! 😀</p>
-    </div>
-
-
-    
-    <div>
-        <p>published : 14.07.2021, 19:40</p>
-        <h2><a href="">My Second Post</a></h2>
-        <p>나의 두번째 게시글 입니다!! 😀</p>
-    </div> -->
 </body>
+
 </html>
