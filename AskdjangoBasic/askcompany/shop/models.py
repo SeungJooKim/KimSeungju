@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # 파일은 FileField, ImageField 많이 사용
 # 문자열은 CharField, TextField, SlugField 등
@@ -24,6 +25,11 @@ class Item(models.Model):
 
     def __str__(self):
         return f'<{self.pk}> {self.name}'
+
+
+# class Post(models.Model):
+#     author = models.ForeignKey(
+#         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
 """
