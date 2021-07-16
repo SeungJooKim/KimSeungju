@@ -12,4 +12,6 @@ urlpatterns = [  # 순서가 존재!
     path('admin/', admin.site.urls),
     path('mysum/<int:x>/<int:y>/', mysum),
     path('shop/', include('shop.urls')),
+    path('blog/', include('blog.urls')),
+
 ]
