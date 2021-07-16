@@ -25,7 +25,7 @@
 
 ### Django files  
 
-![django](../AskdjangoBasic\django.PNG)
+![django](../AskdjangoBasic/django.PNG)
 
 - 상위 askcompany 폴더 명은 변경해도 괜찮으나 아래 askcompany 폴더 명은 바꾸면 다른 파일들에서도 수정해야하는 경우 발생! (주의✔)
 - manage.py : 명령행을 통해 각종 장고 명령 수행
