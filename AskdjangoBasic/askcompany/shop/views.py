@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Item
 
 
 def archives_year(request, year):
@@ -17,3 +18,17 @@ def view2(request):
 
 def view3(request):
     return JsonResponse({'hello': 'Ask company'})
+
+
+def item_list(request):
+    qs = Item.objects.all()
+
+    q = request.GET.get('q', '')
+
+    if q:
+        qs.filter(name__icontains=q)
+
+    return render(request, 'shop/item_list.html', {
+        'item_list': qs,
+        'q': q,
+    })
