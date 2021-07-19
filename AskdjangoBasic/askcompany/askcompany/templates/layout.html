@@ -1,0 +1,30 @@
+{% load static fresh_static%}
+<html>
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      {%block title%}Ask Company{%endblock%}</title>
+
+      <style>
+        body {
+          background-color: lightpink;
+        }
+      </style>
+      {% block extra_head%}
+        <link rel="stylesheet" href="{%fresh_static "main.css" %}"/>
+      {% endblock %}
+    </head>
+
+    <body>
+      <h1>Ask Company</h1>
+      {% block content%}{% endblock %}
+      <hr/>
+      &copy; 2021.07.19. Ask Company
+      {% block extra_body %}
+        <script src="{%static "main.js" %}"></script>
+
+      {% endblock %}
+    </body>
+
+  </html>
