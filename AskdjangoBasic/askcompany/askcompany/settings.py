@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@*1r%3*6jy@)u*z#4e1yisr-x3-$qp#1n!iqm(y=+h#@m)nzt5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # 실제 서비스 시에는 false로 해야함!
+DEBUG = True  # 실제 서비스 시에는 false로 해야함!
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,9 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.humanize',
     'django.contrib.staticfiles',
     'debug_toolbar',
     'django_extensions',
+
     'blog',
     'shop',
 ]
@@ -60,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'askcompany', 'templates'),
+            os.path.join(BASE_DIR, 'askcompany', 'templates'),  # 파일시스템 로더
+            # 한 개정도만 만들어서 사용하는게 좋아요!
         ],
         'APP_DIRS': True,  # 앱 아래 template 사용 여부
         'OPTIONS': {
