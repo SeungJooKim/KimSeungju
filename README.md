@@ -33,3 +33,6 @@
 
 + [Djangogirls](https://github.com/piro15/KimSeungju/tree/master/Djangogirls)  
    + Djangogirls 튜토리얼😜
+
++ [AskdjangoBasic](https://github.com/piro15/KimSeungju/tree/master/AskdjangoBasic)  
+   + AskDjango 기초편 강의😜
