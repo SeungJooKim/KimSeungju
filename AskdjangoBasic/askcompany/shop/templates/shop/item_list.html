@@ -1,16 +1,20 @@
 {% extends "shop/layout.html" %}
 {%block content %}
-{{block.super}} <!-- 부모내용 같이 써짐 -->
-<form action="" method="GET">
-  <input type="text" name="q" value="{{q}}" />
-  <input type="submit" value="search" />
-</form>
-<ul>
-  {% for item in item_list%}
-  <li>
-    <a href="/shop/{{item.pk}}/"> {{item.name}} </a>
-    {{item.price}} {{item.desc}}
-  </li>
-  {% endfor%}
-</ul>
-{%endblock%}
+  {{block.super}}
+  <!-- 부모내용 같이 써짐 -->
+  <form action="" method="GET">
+    <input type="text" name="q" value="{{q}}"/>
+    <input type="submit" value="search"/>
+  </form>
+  <ul>
+    {% for item in item_list%}
+      <li>
+        <a href="{{item.get_absolute_url}}">
+          {{item.name}}
+        </a>
+        {{item.price}}
+        {{item.desc}}
+      </li>
+      {% endfor%}
+    </ul>
+    {%endblock%}
