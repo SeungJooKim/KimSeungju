@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@*1r%3*6jy@)u*z#4e1yisr-x3-$qp#1n!iqm(y=+h#@m)nzt5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # 실제 서비스 시에는 false로 해야함!
+DEBUG = False  # 실제 서비스 시에는 false로 해야함!
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -59,8 +59,10 @@ ROOT_URLCONF = 'askcompany.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'askcompany', 'templates'),
+        ],
+        'APP_DIRS': True,  # 앱 아래 template 사용 여부
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
