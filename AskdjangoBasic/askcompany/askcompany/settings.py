@@ -131,3 +131,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "askcompany", "static")]
 INTERNAL_IPS = ['127.0.0.1']
+
+MEDIA_URL="/media/"
+MEDIA_ROOT =os.path.join(BASE_DIR,"media")

@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-
+from askcompany.utils import uuid_upload_to
 # 파일은 FileField, ImageField 많이 사용
 # 문자열은 CharField, TextField, SlugField 등
 # 날짜/ 시간 :DateTimeField, DateField, TimeField 등
@@ -19,6 +19,7 @@ class Item(models.Model):
     name = models.CharField(max_length=100)
     desc = models.TextField(blank=True)  # 공백도 ok
     price = models.PositiveIntegerField()  # 양수
+    photo = models.ImageField(blank = True, upload_to = uuid_upload_to)
     is_publish = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -3,16 +3,22 @@
 
 {% block content%}
 
-    <h2> {{ item.name}}
-        가격 :{{item.price|intcomma}}원
-        {% if item.desc %}
+<h2>
+    {{ item.name}}
+    {% if item.photo %}
+    <br>
+    <img src="{{item.photo.url}}" style="max-width: 100%;" />
+    <br>
+    {% endif%}
+    <br>
+    가격 :{{item.price|intcomma}}원
+    {% if item.desc %}
     <p>
         {{item.desc}}
     </p>
     {% endif %}
 
-
-    </h2>
-    <hr>
-    <a href="/shop/">목록</a>
+</h2>
+<hr>
+<a href="/shop/">목록</a>
 {% endblock %}
