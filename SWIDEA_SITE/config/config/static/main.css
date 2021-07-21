@@ -1,0 +1,46 @@
+body {
+    background:linear-gradient(to bottom,  #0f0c29, #302b63, #24243e);
+    padding :30px;
+    width: 100%;
+    color: white;
+
+}
+
+#nav_list{
+    display: inline;
+    margin-left: 400px;
+
+}
+li{
+    display: inline-block;
+    color:white;
+    margin-right: 10px;
+}
+
+#container_main{
+    width:85%;
+    height:610px;
+    padding: 0;
+    margin-top: 30px;
+    background: linear-gradient(to bottom,#141e30, #243b55);
+    margin-bottom: 100px;
+} 
+
+a{
+    color:white;
+}
+a:hover{
+    text-decoration: none;
+    color:black;
+}
+
+#nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+#title{
+    font-size: 20px;
+}

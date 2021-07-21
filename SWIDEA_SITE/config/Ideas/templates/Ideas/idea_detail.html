@@ -1,0 +1,38 @@
+{% extends "Ideas/layout.html" %}
+{% block content%}
+{%load static%}
+<div class="container">
+    <div class="row justify-content-md-center" id="addItem-head">
+        <h2>Idea Detail</h2>
+    </div>      
+    <div class ="row justify-content-md-center">
+        <div class="container" id="detail-container">
+            <div class=row>
+                <div class="col">
+                    {% if idea.image %}
+                        <img src="{{idea.image.url}}" style="max-width: 100%;" />
+                    {%else%}
+                        <img src="{% static "Ideas/no_image.jpg" %}" class="card-img-top" alt="...">
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <span id="detail-item-title">{{idea.title}}</span>
+                    <br><br>
+                    <span id="detail">1) 아이디어 관심도 : <br>
+                    {{idea.interest}}</span> <br><br>
+                    <span id="detail"> 2) 예상 개발 툴 : <br>
+                    <a href="{% url "DevTools:tool_detail" idea.devtool.pk %}">
+                    {{idea.devtool}}</a></span><br><br>
+                    <span id="detail"> 3) 아이디어 설명 : <br>
+                    {{idea.desc}} </span> <br>
+                </div>
+            </div>
+            <div class="row" id="btn-row">
+                <a id="btn-del" onclick="return confirm('정말 삭제하시겠습니까?');" href="{% url 'Ideas:idea_delete' idea.pk%}" class="btn btn-lg active" role="button" aria-pressed="true">삭제</a>
+                <a id="btn-list" href="{% url 'Ideas:idea_list' %}" class="btn btn-lg active" role="button" aria-pressed="true">목록</a>
+                <a id="btn-update" href="{% url 'Ideas:idea_update' idea.pk %}" class="btn btn-lg active" role="button" aria-pressed="true">수정</a>
+            </div>
+        </div>
+    <div>
+</div>
+{% endblock %}

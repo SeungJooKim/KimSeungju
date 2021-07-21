@@ -1,0 +1,37 @@
+{% extends "DevTools/layout.html" %}
+{% block content%}
+{%load static%}
+
+<div class ="row justify-content-md-center" id="addTool-head">
+    <h2>DevTool Detail</h2>
+    <span>개발툴 세부내용 페이지입니다. 자신이 다룰수 있는 개발툴에 대한 상세내용을 확인해 보아요.</span>
+</div>
+
+
+<div class="container" id="tool-detail-container">     
+    <div class="row" >
+        <span id="tool-name">{{tool.name}} </span>
+    </div>
+    <div class="row" id="tool_list_row">
+        <span>{{tool.kind}}<br>
+        {{tool.desc}}</span> 
+    </div>
+    <div class="row" id="tool_list_row">
+        <hr id="tool-detail-hr">
+        <span id="pos-sw"> > 만들 수 있는 SW 목록 </span>
+    </div>
+    <div class="row" id="tool_list_row">
+        <span sytle="margin-top:10px;">
+        {% for idea in tool_ideas%}
+            <a id="tool-idea" href="{% url "Ideas:idea_detail" idea.pk%}">{{idea.title}}</a>
+            <br>
+        {%endfor%}
+        </span>
+    </div>
+</div>
+    <div class="row" id="btn-row">
+        <a id="btn-del" onclick="return confirm('정말 삭제하시겠습니까?');" href="{% url 'DevTools:tool_delete' tool.pk%}" class="btn btn-lg active" role="button" aria-pressed="true">삭제</a>
+        <a id="btn-list" href="{% url 'DevTools:tool_list' %}" class="btn btn-lg active" role="button" aria-pressed="true">목록</a>
+        <a id="btn-update" href="{% url 'DevTools:tool_update' tool.pk %}" class="btn btn-lg active" role="button" aria-pressed="true">수정</a> 
+    </div>
+{% endblock %}

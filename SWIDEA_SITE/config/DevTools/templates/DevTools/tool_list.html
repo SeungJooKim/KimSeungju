@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'DevTools/layout.html' %}
+
+{% block content %}
+{{block.super}}
+<div class ="row justify-content-md-center" id="addTool-head">
+    <h2>Tool List</h2>
+    <span>개발툴 목록 페이지 입니다. 자신이 사용가능한 개발툴의 목록을 확인해보세요</span>
+</div>
+
+
+<div class="container rounded" id="container_tool">
+    <div class="row justify-content-md-center">
+        <div class="col col-sm-11" id="tool_list">
+        {% for tool in object_list  %}
+    
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{{tool.get_absolute_url}}">{{tool.name}}</a></h5>
+                <hr id="tool-hr">
+                <p class="card-text">
+                <span id ="tool-kind">{{tool.kind}}</span>
+                </p>
+                <span>{{tool.desc}}</span><br>
+            </div>
+        </div>
+        
+        {% endfor %}
+        </div>
+    </div>
+        
+</div>
+
+
+{% endblock%}
+</div>

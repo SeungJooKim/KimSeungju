@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block extra_head%}
+    <link rel="stylesheet" href="{%static "/css/bootstrap.min.css"%}">
+    <link rel="stylesheet" href="{%static "/css/bootstrap-grid.css"%}">
+    <link rel="stylesheet" href="{%static "main.css" %}"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{%static "/js/bootstrap.js" %}"></script>
+    {% endblock %}
+    <title>My SW Idea Management</title>
+</head>
+<body>
+    <div class="row" id="nav">
+        <a href="{% url "root" %}" id= "title">My SW Idea Manage</a><span>
+        <ul class ="nav" id="nav_list" >
+            <li class="nav-item"><a href="{% url "Ideas:idea_create" %}">아이디어 등록</a></li>
+            <li class="nav-item"><a href="{% url "Ideas:idea_list" %}">아이디어 관리</a></li>
+            <li class="nav-item"><a href="{% url "DevTools:tool_create" %}">개발툴 등록</a></li>
+            <li class="nav-item"><a href="{% url "DevTools:tool_list"%}">개발툴 관리</a></li>
+        </ul>
+    </div>   
+
+    <div class="container rounded" id="container_main">
+    {% block content %}
+    {% endblock content %}
+    </div>
+
+    {% block extra_body %}
+    {% endblock %}
+</body>
+</html>
