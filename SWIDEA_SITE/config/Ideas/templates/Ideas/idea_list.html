@@ -1,8 +1,69 @@
 <!DOCTYPE html>
 {% extends 'ideas/layout.html' %}
+{%load static%}
 {% block content %}
 {{block.super}}
-{% for item in object_list  %}
-    {{item.title}}
+<div class="row justify-content-md-center" id="addItem-head">
+        <h2>Idea List</h2>
+        <span style="color:white">나의 아이디어를 잊지 말고 기록해보세요</span>
+</div> 
+<div class="container rounded" id="container_idea">
+{% for idea in idea_list  %}
+    <div class="card" id ="item">
+        {% if idea.image%}
+            <img src="{{idea.image.url}}" class="card-img-top" alt="...">
+        {%else%}
+        <img src="{% static "Ideas/no_image.jpg" %}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+            <p class="card-text">
+                <a href="{% url 'Ideas:idea_detail' idea.pk %}"> 
+            {{idea.title}}
+            </a>
+            <hr id="card-line">
+            <span>예상 개발 툴 :  {{idea.devtool}}</span>
+            <br>
+            <span>아이디어 관심도 : <span id="interest{{idea.pk}}">{{idea.interest}}</span>
+            <button id="increase" onclick="addInterest({{idea.pk}})">+</button>
+            <button id="decrease" onclick="minusInterest({{idea.pk}})">-</button>
+            </p>
+        </div>
+        
+    </div>
+
 {% endfor %}
+
 {% endblock%}
+{% block extra_body %}
+    <script type="text/javascript">
+        function addInterest(pk){
+            $.ajax({
+                url: "{% url 'Ideas:interest_add' %}",
+                data:{
+                    'pk':pk,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                dataType:"json",
+                success: function(response) {
+                    $('#interest'+pk).html(response.interest)
+                }
+            });
+        };
+
+        function minusInterest(pk){
+            $.ajax({
+                url: "{% url 'Ideas:interest_minus' %}",
+                data:{
+                    'pk':pk
+                },
+                dataType:"json",
+                success: function(response) {
+                    $('#interest'+pk).html(response.interest)
+                    console.log($('#interest'))
+                }
+            });
+        };
+
+    </script>
+{% endblock %}
+</div>

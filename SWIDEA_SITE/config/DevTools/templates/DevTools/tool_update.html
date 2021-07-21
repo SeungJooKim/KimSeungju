@@ -1,0 +1,18 @@
+{% extends "DevTools/layout.html" %}
+{%load static%}
+{% block content %}
+{{block.super}}
+<div class="container">
+            <div class="row justify-content-md-center" id="addTool-head">
+                    <h2>DevTool Detail Update</h2>
+                    <span style="color:white">개발툴 세부내용 수정 페이지입니다. 개발툴에 대해 수정사항이 있으면 고쳐보아요.</span>
+            </div>      
+            <div class="row justify-content-md-center" id="form-container">
+                <form action="" method="post" enctype="multipart/form-data" autocomplete="off">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="submit" class="btn rounded" id="submit-btn" />
+                </form>
+            </div>
+</div>
+{% endblock %}
