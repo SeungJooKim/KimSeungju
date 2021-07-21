@@ -35,4 +35,7 @@
    + Djangogirls 튜토리얼😜
 
 + [AskdjangoBasic](https://github.com/piro15/KimSeungju/tree/master/AskdjangoBasic)  
-   + AskDjango 기초편 강의😜
+   + AskDjango 기초편 / 중급편 강의😜
+   
++ [SWIDEA_SITE](https://github.com/piro15/KimSeungju/tree/master/SWIDEA_SITE) 
+   + Django로 간단한 사이트 만들기✨
