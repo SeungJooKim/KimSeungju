@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-md-center" id="addItem-head">
         <h2>Idea Detail</h2>
+        <span style="color:white">아이디어 세부내용 페이지 입니다. 당신이 구현하려 한 아이디어들을 자세히 살펴보세요.</span>
     </div>      
     <div class ="row justify-content-md-center">
         <div class="container" id="detail-container">
@@ -21,7 +22,7 @@
                     <span id="detail">1) 아이디어 관심도 : <br>
                     {{idea.interest}}</span> <br><br>
                     <span id="detail"> 2) 예상 개발 툴 : <br>
-                    <a href="{% url "DevTools:tool_detail" idea.devtool.pk %}">
+                    <a id="idea-tool" href="{% url "DevTools:tool_detail" idea.devtool.pk %}">
                     {{idea.devtool}}</a></span><br><br>
                     <span id="detail"> 3) 아이디어 설명 : <br>
                     {{idea.desc}} </span> <br>
