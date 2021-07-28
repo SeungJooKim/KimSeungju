@@ -39,3 +39,7 @@
    
 + [SWIDEA_SITE](https://github.com/piro15/KimSeungju/tree/master/SWIDEA_SITE) 
    + Django로 간단한 사이트 만들기✨
+   
++ [Pirostagram](https://github.com/piro15/KimSeungju/tree/master/Piro15_Ajax_Pirostagram) 
+   + Ajax를 사용한 "Pirostagram 사이트" 만들기💕
+
