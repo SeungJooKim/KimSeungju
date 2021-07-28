@@ -1,0 +1,163 @@
+{% extends 'posts/layout.html' %}
+{% block content %}
+{% for post in posts %}
+<div class="contianer justify-content-center rounded post-{{post.pk}}" id="postCard">
+    <div class="row">
+        <div class="col col-md-6 rounded">
+            {% if post.image %}
+            <img src="{{post.image.url}}" />
+            {% endif %}
+        </div>
+        <div class="col col-md-6 rounded" style="border:solid 3px black;">
+            <div class="text-center mt-2">{{post.title}}</div>
+            <hr>
+            <div class="row p-3" style="height:100px;">
+                {{post.content}}
+            </div>
+            <div class="row p-3">
+                <div class="comment-{{ post.pk }}">
+                    댓글
+                    <hr>
+                    {% for comment in comments %}
+                    {% if comment.post == post %}
+                    <div class="comment-pk-{{ comment.pk }} mt-1 row">
+                        <span class="col-9">{{ comment.content }}</span>
+                        <a id="commentBtn" class="btn btn-outline-dark"
+                            onclick="onClickDeleteComment({{ comment.pk }})">삭제</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row p-3">
+                {% if post.like == 1 %}
+                <div class="row like">
+                    <span>
+                        이 게시물에 '좋아요'를 누르셨습니다!
+                        <a onclick="onClickLike({{ post.pk }})">❤</a>
+                    </span>
+                </div>
+                {% else %}
+                <div class="row like">
+                    <span>
+                        게시물이 마음에 드시면 '좋아요'를 눌러주세요!
+                        <a class="btn like" onclick="onClickLike({{ post.pk }})">🤍</a>
+                    </span>
+                </div>
+                {% endif %}
+            </div>
+            <div class="row p-3">
+                <input type="text" class="newComment-{{post.pk}}" id="commentInput" placeholder="댓글 달기...">
+                <button class="btn btn-outline-dark" id="addCommentBtn"
+                    onclick="onClickAddComment({{ post.pk }})">게시</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+{% block extra_body%}
+<script>
+    //게시글 삭제
+    const reqDelete = new XMLHttpRequest();
+
+    const onClickDeleteComment = (pk) => {
+        const url = '/delete_comment/';
+        reqDelete.open('POST', url, true);
+        reqDelete.setRequestHeader(
+            'Content-Type',
+            'application/x-www-form-urlencoded'
+        );
+        reqDelete.send(JSON.stringify({ pk: pk }));
+    }
+
+    const deleteHandleResponse = () => {
+        if (reqDelete.status < 400) {
+            const { pk } = JSON.parse(reqDelete.response);
+            const element = document.querySelector(`.comment-pk-${pk}`);
+            element.innerHTML = "";
+        }
+    };
+
+
+    reqDelete.onreadystatechange = () => {
+        if (reqDelete.readyState === XMLHttpRequest.DONE) {
+            deleteHandleResponse();
+        };
+    };
+
+
+    //게시글 등록
+    const reqAdd = new XMLHttpRequest();
+
+    const onClickAddComment = (pk) => {
+        const url = '/add_comment/';
+        reqAdd.open('POST', url, true);
+        reqAdd.setRequestHeader(
+            'Content-Type',
+            'application/x-www-form-urlencoded'
+        );
+        const newComment = document.querySelector(`.newComment-${pk}`).value
+        reqAdd.send(JSON.stringify({ pk: pk, newComment: newComment }));
+    }
+
+    const AddHandleResponse = () => {
+        if (reqAdd.status < 400) {
+            const { post_pk, comment_pk, content } = JSON.parse(reqAdd.response);
+            const element = document.querySelector(`.comment-${post_pk}`);
+            element.innerHTML += `
+            <div class="comment-pk-${comment_pk} mt-1 row">
+                <span class="col-9">${content}</span>
+                <a id="commentBtn" class="btn btn-outline-dark"
+                    onclick="onClickDeleteComment(${comment_pk})">삭제</a>
+            </div>
+            `
+        };
+    };
+
+    reqAdd.onreadystatechange = () => {
+        if (reqAdd.readyState === XMLHttpRequest.DONE) {
+            AddHandleResponse();
+        };
+    };
+
+    //좋아요
+    const reqLike = new XMLHttpRequest();
+
+    const onClickLike = (post_pk) => {
+        const url = '/like/';
+        reqLike.open('POST', url, true);
+        reqLike.setRequestHeader(
+            'Content-Type',
+            'application/x-www-form-urlencoded'
+        );
+        reqLike.send(JSON.stringify({ post_pk: post_pk }));
+    }
+
+    const LikeHandleResponse = () => {
+        if (reqLike.status < 400) {
+            const { post_pk, post_like } = JSON.parse(reqLike.response);
+            const element = document.querySelector(`.post-${post_pk} .like`);
+            if (post_like == true) {
+                element.innerHTML = ` <span>
+                    이 게시물에 '좋아요'를 누르셨습니다!
+                    <a onclick="onClickLike(${post_pk})">❤</a>
+                </span>`
+            } else {
+                element.innerHTML = ` <span>
+                    게시물이 마음에 드시면 '좋아요'를 눌러주세요!
+                    <a class="btn like" onclick="onClickLike(${post_pk})">🤍</a>
+                </span>`
+            }
+        };
+    };
+
+    reqLike.onreadystatechange = () => {
+        if (reqLike.readyState === XMLHttpRequest.DONE) {
+            LikeHandleResponse();
+        };
+    };
+
+</script>
+
+{% endblock %}

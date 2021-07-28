@@ -1,0 +1,43 @@
+#postCard{
+    padding: 20px;
+    width: 60%;
+    border:solid 3px black;
+    margin:0 auto;
+    margin-top: 30px;
+}
+#postCard img{
+    width:90%;
+    height: 90%;
+    border-radius:30px;
+    object-fit: cover;
+}
+#commentInput{
+    width: 80%;
+    margin-right: 5px;
+}
+#commentBtn{
+    width: 60px;
+    height: 32px;
+}
+#addCommentBtn{
+    width: 60px;
+    height: 32px;
+}
+.like span {
+    font-size: 15px;    
+}
+
+.container__create{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 40%;
+    padding: 20px;
+    margin:0 auto;
+    margin-top: 100px;
+    border-radius: 30px;
+    border : solid 1px lightgray;
+}
+.container__create form  table #id_title,textarea{
+    border-radius: 10px;
+}
