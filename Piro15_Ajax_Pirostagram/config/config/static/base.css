@@ -1,0 +1,27 @@
+body{
+    color:black;
+}
+
+.container a {
+    text-decoration:none ;
+}
+#post_create{
+    position: fixed;
+    right: 0;
+    margin-right: 30px;
+}
+/* .header__container {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    height: 2rem;
+    align-items: center;
+    border-bottom: var(--main-border);
+} */
+/* 
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+} */
